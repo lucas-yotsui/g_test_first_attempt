@@ -38,12 +38,12 @@ file(GLOB_RECURSE HEADERS
     )
     
 file(GLOB_RECURSE TESTS 
-        ${CMAKE_SOURCE_DIR}/test/*.c
-        ${CMAKE_SOURCE_DIR}/test/*.C # funny enough, this one is not a c equivalent, but rather a c++ one
-        ${CMAKE_SOURCE_DIR}/test/*.cpp
-        ${CMAKE_SOURCE_DIR}/test/*.CPP
-        ${CMAKE_SOURCE_DIR}/test/*.c++
-        ${CMAKE_SOURCE_DIR}/test/*.cxx
-        ${CMAKE_SOURCE_DIR}/test/*.cc
-        ${CMAKE_SOURCE_DIR}/test/*.cp
+        ${CMAKE_SOURCE_DIR}/tests/*.c
+        ${CMAKE_SOURCE_DIR}/tests/*.C # funny enough, this one is not a c equivalent, but rather a c++ one
+        ${CMAKE_SOURCE_DIR}/tests/*.cpp
+        ${CMAKE_SOURCE_DIR}/tests/*.CPP
+        ${CMAKE_SOURCE_DIR}/tests/*.c++
+        ${CMAKE_SOURCE_DIR}/tests/*.cxx
+        ${CMAKE_SOURCE_DIR}/tests/*.cc
+        ${CMAKE_SOURCE_DIR}/tests/*.cp
     )
