@@ -21,7 +21,7 @@ project(
 
 include_directories(BEFORE ${INCLUDE_DIR})
 
-add_executable(${PROJECT_NAME} ${SOURCES} ${HEADERS})
+add_executable(${PROJECT_NAME} ${SOURCES} ${HEADERS} ${CMAKE_SOURCE_DIR}/app/main.cpp)
 
 target_compile_options(${PROJECT_NAME} PRIVATE ${COMPILER_WARNINGS})
 # --------------------------------------------------------------------------------------------- #
@@ -36,12 +36,9 @@ FetchContent_MakeAvailable(googletest)
 
 enable_testing()
 
-add_executable(${PROJECT_NAME}_test ${TESTS})
+add_executable(${PROJECT_NAME}_test ${TESTS} ${SOURCES} ${HEADERS})
 
-target_link_libraries(
-    ${PROJECT_NAME}_test
-    GTest::gtest_main
-)
+target_link_libraries(${PROJECT_NAME}_test -static GTest::gtest_main)
 
 include(GoogleTest)
 gtest_discover_tests(${PROJECT_NAME}_test)
